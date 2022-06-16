@@ -1,0 +1,44 @@
+{
+  "data": [
+    {
+      "id": 15,
+      "suscriptor": "Juan Perez",
+      "plan": "Repisa chica",
+      "plazo": "6 meses",
+      "fecha_inicio": "Mar 3, 2021",
+      "fecha_fin": "Sep 3, 2021",
+      "status": "Activo",
+      "total": "$100"
+    },
+    {
+      "id": 32,
+      "suscriptor": "Pedro Lopez",
+      "plan": "Repisa grande",
+      "plazo": "4 meses",
+      "fecha_inicio": "Dic 1, 2021",
+      "fecha_fin": "Abr 1, 2022",
+      "status": "Terminado",
+      "total": "$100"
+    },
+    {
+      "id": 20,
+      "suscriptor": "Rafael Valenzuela",
+      "plan": "Repisa grande",
+      "plazo": "12 meses",
+      "fecha_inicio": "May 18, 2021",
+      "fecha_fin": "May 18, 2022",
+      "status": "Terminado",
+      "total": "$100"
+    },
+    {
+      "id": 53,
+      "suscriptor": "Carlos Morales",
+      "plan": "Repisa chica",
+      "plazo": "6 meses",
+      "fecha_inicio": "Ago 4, 2021",
+      "fecha_fin": "Ago 4, 2022",
+      "status": "Activo",
+      "total": "$100"
+    }
+  ]
+}
