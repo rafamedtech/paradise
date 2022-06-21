@@ -1,6 +1,6 @@
 <script setup>
-import { computed, ref, onMounted } from 'vue'
-import { useMainStore } from '@/stores/main'
+import { computed, ref, onMounted } from "vue";
+import { useMainStore } from "@/stores/main";
 import {
   mdiAccountMultiple,
   mdiCartOutline,
@@ -9,48 +9,48 @@ import {
   mdiMonitorCellphone,
   mdiReload,
   mdiGithub,
-  mdiChartPie
-} from '@mdi/js'
-import * as chartConfig from '@/components/Charts/chart.config.js'
-import LineChart from '@/components/Charts/LineChart.vue'
-import MainSection from '@/components/MainSection.vue'
-import TitleBar from '@/components/TitleBar.vue'
-import HeroBar from '@/components/HeroBar.vue'
-import CardWidget from '@/components/CardWidget.vue'
-import CardComponent from '@/components/CardComponent.vue'
-import ClientsTable from '@/components/ClientsTable.vue'
-import Notification from '@/components/Notification.vue'
-import JbButton from '@/components/JbButton.vue'
-import CardTransactionBar from '@/components/CardTransactionBar.vue'
-import CardClientBar from '@/components/CardClientBar.vue'
-import TitleSubBar from '@/components/TitleSubBar.vue'
+  mdiChartPie,
+} from "@mdi/js";
+import * as chartConfig from "@/components/Charts/chart.config.js";
+import LineChart from "@/components/Charts/LineChart.vue";
+import MainSection from "@/components/MainSection.vue";
+import TitleBar from "@/components/TitleBar.vue";
+import HeroBar from "@/components/HeroBar.vue";
+import CardWidget from "@/components/CardWidget.vue";
+import CardComponent from "@/components/CardComponent.vue";
+import ClientsTable from "@/components/ClientsTable.vue";
+import Notification from "@/components/Notification.vue";
+import JbButton from "@/components/JbButton.vue";
+import CardTransactionBar from "@/components/CardTransactionBar.vue";
+import CardClientBar from "@/components/CardClientBar.vue";
+import TitleSubBar from "@/components/TitleSubBar.vue";
 
-const titleStack = ref(['Admin', 'Dashboard'])
+const titleStack = ref(["Admin", "Dashboard"]);
 
-const chartData = ref(null)
+const chartData = ref(null);
 
 const fillChartData = () => {
-  chartData.value = chartConfig.sampleChartData()
-}
+  chartData.value = chartConfig.sampleChartData();
+};
 
 onMounted(() => {
-  fillChartData()
-})
+  fillChartData();
+});
 
-const mainStore = useMainStore()
+const mainStore = useMainStore();
 
-const clientBarItems = computed(() => mainStore.clients.slice(0, 3))
+const clientBarItems = computed(() => mainStore.clients.slice(0, 3));
 
-const transactionBarItems = computed(() => mainStore.history.slice(0, 3))
+const transactionBarItems = computed(() => mainStore.history.slice(0, 3));
 
-const darkMode = computed(() => mainStore.darkMode)
+const darkMode = computed(() => mainStore.darkMode);
 </script>
 
 <template>
   <title-bar :title-stack="titleStack" />
   <hero-bar>Dashboard</hero-bar>
   <main-section>
-    <notification
+    <!-- <notification
       color="info"
       :icon="mdiGithub"
     >
@@ -70,7 +70,7 @@ const darkMode = computed(() => mainStore.darkMode)
           small
         />
       </template>
-    </notification>
+    </notification> -->
     <div class="grid grid-cols-1 gap-6 lg:grid-cols-3 mb-6">
       <card-widget
         trend="12%"
@@ -103,7 +103,7 @@ const darkMode = computed(() => mainStore.darkMode)
     <div class="grid grid-cols-1 xl:grid-cols-2 gap-6 mb-6">
       <div class="flex flex-col justify-between">
         <card-transaction-bar
-          v-for="(transaction,index) in transactionBarItems"
+          v-for="(transaction, index) in transactionBarItems"
           :key="index"
           :amount="transaction.amount"
           :date="transaction.date"
@@ -125,10 +125,7 @@ const darkMode = computed(() => mainStore.darkMode)
       </div>
     </div>
 
-    <title-sub-bar
-      :icon="mdiChartPie"
-      title="Trends overview"
-    />
+    <title-sub-bar :icon="mdiChartPie" title="Trends overview" />
 
     <card-component
       title="Performance"
@@ -138,22 +135,13 @@ const darkMode = computed(() => mainStore.darkMode)
       @header-icon-click="fillChartData"
     >
       <div v-if="chartData">
-        <line-chart
-          :data="chartData"
-          class="h-96"
-        />
+        <line-chart :data="chartData" class="h-96" />
       </div>
     </card-component>
 
-    <title-sub-bar
-      :icon="mdiAccountMultiple"
-      title="Clients"
-    />
+    <title-sub-bar :icon="mdiAccountMultiple" title="Clients" />
 
-    <notification
-      color="info"
-      :icon="mdiMonitorCellphone"
-    >
+    <notification color="info" :icon="mdiMonitorCellphone">
       <b>Responsive table.</b> Collapses on mobile
     </notification>
 

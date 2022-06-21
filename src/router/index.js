@@ -3,15 +3,6 @@ import { createRouter, createWebHashHistory } from "vue-router";
 import Home from "@/views/Home.vue";
 
 const routes = [
-  // {
-  //   meta: {
-  //     title: 'Select style',
-  //     fullScreen: true
-  //   },
-  //   path: '/',
-  //   name: 'style',
-  //   component: Style
-  // },
   {
     // Document title tag
     // We combine it with defaultDocumentTitle set in `src/main.js` on router.afterEach hook
@@ -32,7 +23,7 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "tables" */ "@/views/Contratos.vue"),
+      import(/* webpackChunkName: "tables" */ "@/views/Contracts.vue"),
   },
   {
     meta: {
@@ -44,7 +35,7 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "tables" */ "@/views/NuevoContrato.vue"),
+      import(/* webpackChunkName: "tables" */ "@/views/NewContract.vue"),
   },
   {
     meta: {
@@ -53,7 +44,7 @@ const routes = [
     path: "/suscriptores",
     name: "suscriptores",
     component: () =>
-      import(/* webpackChunkName: "forms" */ "@/views/Suscriptores.vue"),
+      import(/* webpackChunkName: "forms" */ "@/views/Subscribers.vue"),
   },
   {
     meta: {
@@ -65,9 +56,27 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "tables" */ "@/views/NuevoSuscriptor.vue"),
+      import(/* webpackChunkName: "tables" */ "@/views/NewSubscriber.vue"),
   },
 
+  {
+    meta: {
+      title: "Inventario",
+    },
+    path: "/inventario",
+    name: "Inventario",
+    component: () =>
+      import(/* webpackChunkName: "ui" */ "@/views/Inventory.vue"),
+  },
+  {
+    meta: {
+      title: "Inventario",
+    },
+    path: "/inventario/nuevo",
+    name: "Nuevo producto",
+    component: () =>
+      import(/* webpackChunkName: "ui" */ "@/views/NewProduct.vue"),
+  },
   {
     meta: {
       title: "Profile",
@@ -77,23 +86,7 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "profile" */ "@/views/Profile.vue"),
   },
-  {
-    meta: {
-      title: "Ui",
-    },
-    path: "/ui",
-    name: "ui",
-    component: () => import(/* webpackChunkName: "ui" */ "@/views/Ui.vue"),
-  },
-  {
-    meta: {
-      title: "Responsive layout",
-    },
-    path: "/responsive",
-    name: "responsive",
-    component: () =>
-      import(/* webpackChunkName: "responsive" */ "@/views/Responsive.vue"),
-  },
+
   {
     meta: {
       title: "Login",

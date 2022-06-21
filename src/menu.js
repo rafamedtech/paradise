@@ -47,7 +47,7 @@ export default [
       icon: mdiAccountCircle,
     },
     {
-      to: "/ui",
+      to: "/inventario",
       label: "Inventario",
       icon: mdiDatabase,
     },

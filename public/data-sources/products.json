@@ -1,0 +1,54 @@
+{
+  "data": [
+    {
+      "id": 15,
+      "suscriptor": 404596,
+      "brand": "Alma Accesorios",
+      "category": "Accesorios",
+      "department": "Dama",
+      "name": "Pulso",
+      "price": 65,
+      "qty": 5
+    },
+    {
+      "id": 16,
+      "suscriptor": 404596,
+      "brand": "Alma Accesorios",
+      "category": "Accesorios",
+      "department": "Dama",
+      "name": "Llavero",
+      "price": 75,
+      "qty": 7
+    },
+    {
+      "id": 17,
+      "suscriptor": 404596,
+      "brand": "Alma Accesorios",
+      "category": "Accesorios",
+      "department": "Dama",
+      "name": "Aretes",
+      "price": 79,
+      "qty": 9
+    },
+    {
+      "id": 18,
+      "suscriptor": 707867,
+      "brand": "AA Guaymas",
+      "category": "Dama",
+      "department": "Accesorios",
+      "name": "Pulsera",
+      "price": 300,
+      "qty": 4
+    },
+    {
+      "id": 19,
+      "suscriptor": 707867,
+      "brand": "AA Guaymas",
+      "category": "Dama",
+      "department": "Accesorios",
+      "name": "Collar",
+      "price": 400,
+      "qty": 3
+    }
+  ]
+}

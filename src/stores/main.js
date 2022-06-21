@@ -46,6 +46,7 @@ export const useMainStore = defineStore("main", {
     clients: [],
     history: [],
     contracts: [],
+    products: [],
   }),
   actions: {
     setUser(payload) {

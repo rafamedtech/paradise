@@ -21,6 +21,7 @@ const mainStore = useMainStore(pinia);
 mainStore.fetch("clients");
 mainStore.fetch("history");
 mainStore.fetch("contracts");
+mainStore.fetch("products");
 
 /* App style */
 mainStore.setStyle(localStorage[styleKey] ?? "basic");

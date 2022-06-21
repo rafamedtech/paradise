@@ -42,5 +42,15 @@ const darkModeToggle = () => {
         :to="{ name: 'Nuevo suscriptor' }"
       />
     </level>
+    <level v-if="$route.path === '/inventario'">
+      <h1 class="text-3xl font-semibold leading-tight">
+        <slot />
+      </h1>
+      <jb-button
+        color="info"
+        label="Nuevo producto"
+        :to="{ name: 'Nuevo producto' }"
+      />
+    </level>
   </section>
 </template>
